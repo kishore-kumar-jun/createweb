@@ -8,12 +8,18 @@
 
 
 var btn = document.getElementById('toggleBtn');
-var slide = document.getElementById('sidebar');
+var sidebar = document.getElementById('sidebar');
 
 btn.addEventListener('click', function() {
-  if (slide.classList.contains('open')) {
-    slide.classList.remove('open'); 
+  if (sidebar.classList.contains('hidden')) {
+    sidebar.classList.remove('hidden');
+    sidebar.classList.add('visible');
+    setTimeout(() => sidebar.classList.add('show'), 10); 
   } else {
-    slide.classList.add('open'); 
+    sidebar.classList.remove('show');
+    setTimeout(() => {
+      sidebar.classList.remove('visible');
+      sidebar.classList.add('hidden');
+    }, 300); 
   }
 });

@@ -49,7 +49,7 @@ nav a:hover {
   border-radius: 15px;
 }
 
-aside {
+aside.visible {
   flex-direction: column;
   float: right;
   position: relative;
@@ -62,21 +62,30 @@ aside {
   margin-right: 10px;
   margin-top: 34px;
   margin-bottom: 5px;
-  display: none;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+}
+aside.visible.show {
+  transform: translateX(0);
 }
 aside a i {
   margin-right: 8px;
   font-size: 20px;
 }
 aside a {
+  display: block;
   padding: 30px;
   align-items: center;
   text-align: center;
-  transition: ease-in 0.5s;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 aside a:hover {
   background-color: greenyellow;
   transform: scale3d(1, 1.1, 1);
+}
+aside.hidden {
+  display: none;
 }
 .slid {
   position: relative;
@@ -96,11 +105,11 @@ aside a:hover {
   margin-bottom: 5px;
 
   transition: transform 0.3s ease-in-out;
-  transform: translateX(100%); 
+  transform: translateX(100%);
 }
 
 .slid.open {
-  transform: translateX(0); 
+  transform: translateX(0);
 }
 
 #toggleBtn {
@@ -229,7 +238,7 @@ h5 {
     width: fit-content;
     margin-top: 103px;
   }
-  #toggleBtn{
+  #toggleBtn {
     font-size: x-small;
     margin-bottom: -35px;
     background-color: black;
