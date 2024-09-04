@@ -20,6 +20,6 @@ btn.addEventListener('click', function() {
     setTimeout(() => {
       sidebar.classList.remove('visible');
       sidebar.classList.add('hidden');
-    }, 300); 
+    }, 300);
   }
 });
