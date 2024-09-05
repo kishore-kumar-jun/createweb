@@ -1,25 +1,11 @@
-(function(){
-  document.addEventListener('DOMContentLoaded' ,function(){
-    alert("Welcome to Kishore project")
-  })
-}) ();
+function onof() {
+  
+  var slidediv = document.querySelector('.slidediv');
+  
 
-
-
-
-var btn = document.getElementById('toggleBtn');
-var sidebar = document.getElementById('sidebar');
-
-btn.addEventListener('click', function() {
-  if (sidebar.classList.contains('hidden')) {
-    sidebar.classList.remove('hidden');
-    sidebar.classList.add('visible');
-    setTimeout(() => sidebar.classList.add('show'), 10); 
+  if (slidediv.classList.contains('showdiv')) {
+    slidediv.classList.remove('showdiv');
   } else {
-    sidebar.classList.remove('show');
-    setTimeout(() => {
-      sidebar.classList.remove('visible');
-      sidebar.classList.add('hidden');
-    }, 300);
+    slidediv.classList.add('showdiv');
   }
-});
+}
